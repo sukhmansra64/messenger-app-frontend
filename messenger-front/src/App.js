@@ -1,5 +1,5 @@
 import {BrowserRouter, Switch,Route} from "react-router-dom";
-import Login from "./Pages/Chatroom";
+import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Dashboard from "./Pages/Dashboard";
 
