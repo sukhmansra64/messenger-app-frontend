@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import makeToast from "../Toaster";
+import {withRouter} from "react-router";
 
 const Login = (props) =>{
     const emailRef = React.createRef();
@@ -48,4 +49,4 @@ const Login = (props) =>{
     );
 }
 
-export default Login;
+export default withRouter(Login);
