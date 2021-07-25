@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Dashboard = () =>{
     const [chatrooms, setChatrooms] = React.useState([]);
     const getChatrooms = () => {
-        axios.get("http://localhost:3000/chatroom", {
+        axios.get("http://localhost:8080/chatroom", {
                 headers: {
                     Authorization: localStorage.getItem("CC_Token"),
                 },
@@ -17,7 +17,6 @@ const Dashboard = () =>{
     };
     React.useEffect(() => {
         getChatrooms();
-        console.log(chatrooms)
         // eslint-disable-next-line
     }, []);
     return(
