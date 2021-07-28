@@ -39,28 +39,29 @@ function App() {
         //eslint-disable-next-line
     }, []);
 
-    return (
-        <BrowserRouter>
-            <Switch>
-                <Route path="/" component={Index} exact />
-                <Route
-                    path="/login"
-                    render={() => <Login setupSocket={setupSocket} />}
-                    exact
-                />
-                <Route path="/register" component={Register} exact />
-                <Route
-                    path="/dashboard"
-                    render={() => <Dashboard socket={socket} />}
-                    exact
-                />
-                <Route
-                    path="/chatroom/:id"
-                    render={() => <Chatroom socket={socket} />}
-                    exact
-                />
-            </Switch>
-        </BrowserRouter>
+    return (<div className='bg-dark'>
+            <BrowserRouter>
+                <Switch>
+                    <Route path="/" component={Index} exact />
+                    <Route
+                        path="/login"
+                        render={() => <Login setupSocket={setupSocket} />}
+                        exact
+                    />
+                    <Route path="/register" component={Register} exact />
+                    <Route
+                        path="/dashboard"
+                        render={() => <Dashboard socket={socket} />}
+                        exact
+                    />
+                    <Route
+                        path="/chatroom/:id"
+                        render={() => <Chatroom socket={socket} />}
+                        exact
+                    />
+                </Switch>
+            </BrowserRouter>
+    </div>
     );
 }
 
