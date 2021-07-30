@@ -16,16 +16,15 @@ body {
     position: fixed;
     left: 50%;
     top: 50%;
-    width: 25vw;
+    width: 320px;
     transform: translate(-50%, -50%);
 }
 
 .cardHeader {
-    background: #f7c52a;
+
     padding: 0.75rem 1.5rem;
     border-radius: 2px;
     text-transform: uppercase;
-    transform: skewY(-4deg);
     font-size: 1.1rem;
     font-weight: bold;
     display: inline-block;

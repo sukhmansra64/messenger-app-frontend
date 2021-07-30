@@ -39,37 +39,60 @@ const Index = (props) => {
         setHasToken(false);
     }
 
-    const loginRegister = () =>{
-        return(
-            <Container className='border border-light rounded-3' style={{height: 400, width: 300}}>
+    const toDash = () => {
+        return (
+            <Container className='border border-light rounded-3' style={{height: 400, width: 320}}>
                 <h1>
                     <p className='text-light'>Welcome back, {username}</p>
                 </h1>
-                <Button className='btn-light' onClick={onClick} style={{height:60, width: 180,}}>
-                        To Dashboard
+                <Button className='btn-light' onClick={onClick} style={{height: 60, width: 180, marginTop: -10}}>
+                    To Dashboard
                 </Button>
-                <Button className='btn-light' onClick={onClick2} style={{height:60, width: 180,marginTop:15}}>
+                <Button className='btn-light' onClick={onClick2} style={{height: 60, width: 180, marginTop: 15}}>
                     Login to a different User
                 </Button>
-                <Button className='btn-light' onClick={onClick3} style={{height:60, width: 180,marginTop:15}}>
+                <Button className='btn-light' onClick={onClick3} style={{height: 60, width: 180, marginTop: 15}}>
                     Register a new account
                 </Button>
-                <Button className='btn-light' onClick={onClick4} style={{height:60, width: 180,marginTop:15}}>
+                <Button className='btn-light' onClick={onClick4} style={{height: 60, width: 180, marginTop: 15}}>
                     Sign Out
                 </Button>
 
             </Container>
         );
     }
+
+        const loginRegister = () =>{
+            return(
+                <Container className='border border-light rounded-3' style={{height: 220, width: 320}}>
+                    <h1>
+                        <p className='text-light'>Welcome</p>
+                    </h1>
+                    <Button className='btn-light' onClick={onClick2} style={{height: 60, width: 180, marginTop: -10}}>
+                        Login
+                    </Button>
+                    <Button className='btn-light' onClick={onClick3} style={{height: 60, width: 180, marginTop: 15}}>
+                        Register
+                    </Button>
+                </Container>
+            );
+        }
+
     return <div className='container' style={{height:'100%', width: '100%', }}>
-        <Container style={{width: '15%', position: 'fixed', left:20, top:20}} className='border border-light rounded-3'>
+        <Container style={{width: '130px', position: 'fixed', left:20, top:20}} className='border border-light rounded-3'>
             <h1 className='text-light'>chat.Y</h1>
         </Container>
         <Container style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
             textAlign: 'center', minHeight: '100vh'}}>
-                    {hasToken ? loginRegister():<Container>Has no token</Container>}
+                    {hasToken ? toDash(): loginRegister()}
         </Container>
-
+        <footer style={{position:"absolute", bottom:0}}>
+            <span className='text-light'>Made by Sukhman Sra.</span>
+            <br/>
+            <span><a href='https://www.linkedin.com/in/sukhsra/' target="_blank" rel="noopener noreferrer"><u className='link-light'>LinkedIn</u></a></span>
+            <br/>
+            <span><a href='https://github.com/sukhmansra64' target="_blank" rel="noopener noreferrer"><u className='link-light'>GitHub</u></a></span>
+        </footer>
     </div>;
 }
 
