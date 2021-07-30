@@ -78,7 +78,7 @@ const Index = (props) => {
             );
         }
 
-    return <div className='container' style={{height:'100%', width: '100%', }}>
+    return <Container style={{height:'100%', width: '100%', }}>
         <Container style={{width: '130px', position: 'fixed', left:20, top:20}} className='border border-light rounded-3'>
             <h1 className='text-light'>chat.Y</h1>
         </Container>
@@ -93,7 +93,7 @@ const Index = (props) => {
             <br/>
             <span><a href='https://github.com/sukhmansra64' target="_blank" rel="noopener noreferrer"><u className='link-light'>GitHub</u></a></span>
         </footer>
-    </div>;
+    </Container>;
 }
 
 export default Index;

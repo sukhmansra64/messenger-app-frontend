@@ -1,16 +1,8 @@
-.chatroomPage {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    margin: -8px;
-}
 
 .chatroomSection {
-    width: 40vw;
-    height: 80vh;
-    margin: auto;
+    margin-top: 100px;
+    width: 350px;
+    height: 600px;
     border: 1px solid #eee;
     position: relative;
 }
@@ -46,11 +38,11 @@
 }
 
 .otherMessage {
-    color: #0099cc;
+    color: #00cc00;
     font-weight: bold;
 }
 
 .ownMessage {
-    color: #00cc00;
+    color: #0099cc;
     font-weight: bold;
 }

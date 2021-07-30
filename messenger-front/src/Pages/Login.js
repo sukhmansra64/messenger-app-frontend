@@ -4,6 +4,7 @@ import makeToast from "../Toaster";
 import {withRouter} from "react-router";
 import {Container} from "react-bootstrap";
 import {Button} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 const Login = (props) =>{
     const emailRef = React.createRef();
@@ -38,19 +39,22 @@ const Login = (props) =>{
                 <Container style={{width: '130px', position: 'fixed', left:20, top:20}} className='border border-light rounded-3'>
                     <h1 className='text-light'>chat.Y</h1>
                 </Container>
+                <Link to='/'>
+                    <Button className='btn-light' style={{position:'fixed',left:40, top:90, width:65}}>Back</Button>
+                </Link>
                 <Container className='card bg-dark border border-light'>
                     <Container className='cardHeader bg-dark text-light rounded-3 border border-light'>Login</Container>
-                    <div className='cardBody'>
-                        <div className='inputGroup'>
+                    <Container className='cardBody'>
+                        <Container className='inputGroup'>
                             <label htmlFor='email' className='text-light'>Email</label>
                             <input type='email' name='email' id='email' placeholder='example@example.com'  className='rounded-3 border border-light' ref={emailRef}/>
-                        </div>
-                        <div className='inputGroup'>
+                        </Container>
+                        <Container className='inputGroup'>
                             <label htmlFor='password' className='text-light'>Password</label>
                             <input type='password' name='password' id='password' placeholder='Password' className='rounded-3 border border-light' ref={passwordRef}/>
-                        </div>
+                        </Container>
                         <Button onClick={loginUser} className='btn-light'>Login</Button>
-                    </div>
+                    </Container>
                 </Container>
                 <footer style={{position:"absolute", bottom:0}}>
                     <span className='text-light'>Made by Sukhman Sra.</span>
