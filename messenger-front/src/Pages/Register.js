@@ -6,9 +6,11 @@ import {Link} from "react-router-dom";
 
 
 const Register = (props) =>{
+    //declares refs
     const nameRef = React.createRef();
     const emailRef = React.createRef();
     const passwordRef = React.createRef();
+    //registers a user by posting the name, email, and password, then pushes the user to the login page
     const registerUser = ()=>{
         const name = nameRef.current.value;
         const email = emailRef.current.value;

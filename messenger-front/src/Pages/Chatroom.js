@@ -3,6 +3,7 @@ import {Link, withRouter} from "react-router-dom";
 import {Button, Container} from "react-bootstrap";
 import axios from "axios";
 
+//declare all the state and variables
 const ChatroomPage = ({ match, socket }) => {
     const chatroomId = match.params.id;
     const [chatName,setChatName] = useState();
@@ -10,6 +11,7 @@ const ChatroomPage = ({ match, socket }) => {
     const messageRef = React.useRef();
     const [userId, setUserId] = React.useState("");
 
+    //function which sends the message to the server using the socket
     const sendMessage = () => {
         if (socket) {
             socket.emit("chatroomMessage", {
@@ -20,6 +22,8 @@ const ChatroomPage = ({ match, socket }) => {
         }
     };
 
+    //when the component mounts, it sends the token to the server with the socket, gets the messages from the socket
+    //and fetches the chat name from the server using the chatname post route
     React.useEffect(() => {
         const token = localStorage.getItem("CC_Token");
         if (token) {
@@ -43,6 +47,7 @@ const ChatroomPage = ({ match, socket }) => {
         //eslint-disable-next-line
     }, [messages]);
 
+    //on mount, the sockcet notifies the server if the user joined or left the chatroom
     React.useEffect(() => {
         if (socket) {
             socket.emit("joinRoom", {
@@ -61,6 +66,7 @@ const ChatroomPage = ({ match, socket }) => {
         //eslint-disable-next-line
     }, []);
 
+    //function checks if the user sent the message and changes the style depending on it, but is bugged :/
     const checkMessage = (message) => {
         if (userId === message.id){
             return {

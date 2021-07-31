@@ -7,9 +7,10 @@ import {Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 const Login = (props) =>{
+    //declares ref
     const emailRef = React.createRef();
     const passwordRef = React.createRef();
-
+    //posts the email and password to the server, if they are valid the server returns a jwt token
     const loginUser = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;

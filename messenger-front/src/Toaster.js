@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 
+//a function which shows custom alerts
 const Toast = Swal.mixin({
     toast: true,
     position: "top-end",

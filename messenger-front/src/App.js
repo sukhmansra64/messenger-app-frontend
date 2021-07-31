@@ -9,6 +9,7 @@ import io from "socket.io-client";
 import makeToast from "./Toaster";
 
 function App() {
+    //set up the client side socket to allow for it to interact with the server
     const [socket, setSocket] = React.useState(null);
 
     const setupSocket = () => {
@@ -39,6 +40,7 @@ function App() {
         //eslint-disable-next-line
     }, []);
 
+    //using react router to allow for pages to push/link to new ones
     return (<div className='bg-dark'>
             <BrowserRouter>
                 <Switch>

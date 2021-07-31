@@ -2,11 +2,13 @@ import React, {useState} from "react";
 import {Button, Container} from "react-bootstrap";
 import axios from "axios";
 
-
 const Index = (props) => {
+    //sets the state
     const [hasToken,setHasToken] = useState(false);
     const [userId, setUserId] = useState('');
     const [username, setUsername] = useState('');
+    //checks if token is there when mounted and fetches the user's name using a post request to the server
+    //using the checkToken route
     React.useEffect(() => {
         const token = localStorage.getItem("CC_Token");
         if (!token) {
@@ -25,6 +27,8 @@ const Index = (props) => {
         }
         // eslint-disable-next-line
     }, [0]);
+
+    //buttons to navigate through the app and sign out by removing the token
     const onClick = () =>{
         props.history.push("/dashboard");
     }
@@ -39,6 +43,7 @@ const Index = (props) => {
         setHasToken(false);
     }
 
+    //if the token is present, the component returns the appropriate menu
     const toDash = () => {
         return (
             <Container className='border border-light rounded-3' style={{height: 400, width: 320}}>
@@ -62,6 +67,7 @@ const Index = (props) => {
         );
     }
 
+        //if the token isn't present, the component returns a menu which will let the user login or register
         const loginRegister = () =>{
             return(
                 <Container className='border border-light rounded-3' style={{height: 220, width: 320}}>

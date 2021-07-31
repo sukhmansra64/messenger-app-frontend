@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import {Button, Container} from "react-bootstrap";
 
 const Dashboard = () =>{
+    //declares the state and ref
     const [chatrooms, setChatrooms] = React.useState([]);
     const chatroomRef = React.useRef();
+    //function uses a get request to retrieves the chatrooms from the server using the chatroom route
     const getChatrooms = () => {
         axios.get("http://localhost:8080/chatroom", {
                 headers: {
@@ -17,6 +19,8 @@ const Dashboard = () =>{
                 setTimeout(getChatrooms, 3000);
             });
     };
+
+    //makes a new chatroom by using a post request to the server using the chatroom route
     const setChatroom = () =>{
         axios.post('http://localhost:8080/chatroom',{
             name: chatroomRef.current.value
@@ -31,6 +35,7 @@ const Dashboard = () =>{
             console.error(err.message);
         })
     }
+    //gets the chatrooms when mounted
     React.useEffect(() => {
         getChatrooms();
         // eslint-disable-next-line
